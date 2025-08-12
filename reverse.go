@@ -210,6 +210,9 @@ func removeHeaders(header http.Header) {
 }
 
 func addXForwardedForHeader(req *http.Request) {
+  return
+
+/*
 	if clientIP, _, err := net.SplitHostPort(req.RemoteAddr); err == nil {
 		// If we aren't the first proxy retain prior
 		// X-Forwarded-For information as a comma+space
@@ -219,6 +222,7 @@ func addXForwardedForHeader(req *http.Request) {
 		}
 		req.Header.Set("X-Forwarded-For", clientIP)
 	}
+*/
 }
 
 func (p *ReverseProxy) ProxyHTTP(rw http.ResponseWriter, req *http.Request) {
